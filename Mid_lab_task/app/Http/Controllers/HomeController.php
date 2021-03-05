@@ -6,16 +6,15 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    function index(){
-        return view('home.index');
+    function index(Request $req){
+        if($req->session()->has('username')){
+            return view('home.index');
+        }else{
+            $req->session()->flash('msg', "invalide Result... Login first");
+            return redirect('/login');
+        }
+        
 
-        // if($req->session()->has('username')){
-        //     return view('home.index', compact('id', 'name'));
-        // }
-        // else{
-        //     $req->session()->flash('msg', 'Invalid requset ...login first');
-        //     return redirect('/login');
-        // }
     }
 
     function manage_customer(){

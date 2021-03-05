@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class LogoutController extends Controller
 {
-    function index(){
+    function index(Request $req){
+        $req->session()->flush();
         return redirect('/login');
     }
 }

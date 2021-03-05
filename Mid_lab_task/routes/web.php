@@ -31,4 +31,4 @@ route::get('/home', 'HomeController@index');
 // route::get('/home/vendors', 'HomeController@manage_vendors');
 // route::get('/home/others_company_stuffs', 'HomeController@others_company_stuffs');
 
-// route::get('/logout', 'LogoutController@index');
+route::get('/logout', 'LogoutController@index');

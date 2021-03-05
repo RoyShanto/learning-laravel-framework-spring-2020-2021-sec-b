@@ -46,9 +46,9 @@
             </table>
     
         </fieldset>
-
-
+        
     </form>
+    {{session('msg')}}
 </body>
 </html>
 

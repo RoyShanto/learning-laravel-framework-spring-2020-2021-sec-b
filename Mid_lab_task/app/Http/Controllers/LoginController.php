@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\user_type;
+use App\Login;
+// use App\Admin;
 
 class loginController extends Controller
 {
@@ -12,17 +13,57 @@ class loginController extends Controller
     }
 
     function verify(Request $req){
-        
         $rules = [
-                        'email' => 'required|email|max:49',
-                        'password' => 'required|min:8|max:20|regex:/^[\w-]*$/'
-                    ];
-                    $this->validate($req, $rules);
-                    // echo $req->email;
-                    // echo $req->password;
-                    return redirect('/home');
-    }
+            'email' => 'required|email|max:49',
+            'password' => 'required|min:8|max:20|regex:/^[\w-]*$/' ];
+            
+            $this->validate($req, $rules);
+
+        $user = Login::where('email', $req->email)
+                    ->where('password', $req->password)
+                    ->get();
+
+                    // print_r($user);
+                    foreach($user as $us)
+                    {
+                        // $username = $us->user_name;
+                        $username = $us->username;
+                        $user_type = $us->type;
+                    }
+                    // print_r($user->email);
+                
+                    // print_r(count($user));
+
+        if(count($user) > 0){
+            
+            // if($user_type == 'admin')
+
+            $req->session()->put('username', $username);  
+            $req->session()->put('user_type', $user_type);  
+
+                // echo $req->session()->get('username');
+                // echo $req->session()->get('user_type');
+
+                return redirect('/home');
+                // return Admin::all();
+        }
+        else{
+            $req->session()->flash('msg', 'invalide user..!');
+            return redirect('\login');
+        }
         
+                 
+    }
+     
+    
+
+
+
+
+
+
+
+    
     //     if($req->email == '' || $req->password == ''){
     //         echo "Null Submition";
 

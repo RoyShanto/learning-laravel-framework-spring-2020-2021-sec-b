@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class user_type extends Model
+class Login extends Model
 {
     protected $table = 'users';
     
@@ -15,4 +15,5 @@ class user_type extends Model
     public $timestamps = false;
     // const CREATED_AT = null;
     // const UPDATED_AT = null;
+
 }
