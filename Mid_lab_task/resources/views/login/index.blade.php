@@ -9,6 +9,13 @@
 <body>
 
     <h1>Login hare!</h1>
+    <!-- {{$errors}} -->
+
+    <!-- @if($errors->any())
+        @foreach($errors -> all() as $err)
+        <li>{{$err}}</li>
+        @endforeach
+    @endif -->
     <form method="post">
     
         <!-- @csrf -->
@@ -20,11 +27,17 @@
             <table>
                 <tr>
                     <td>Email</td>
-                    <td><input type="email" name="email"></td>
+                    <td>
+                        <input type="email" name="email"><br>
+                        <span style="color: red;">@error('email'){{$message}}@enderror</span>
+                    </td>
                 </tr>
                 <tr>
                     <td>Password</td>
-                    <td><input type="password" name="password"></td>
+                    <td>
+                        <input type="password" name="password"><br>
+                        <span style="color: red;">@error('password'){{$message}}@enderror</span>
+                    </td>
                 </tr>
                 <tr>
                     <td><input type="submit" name="submit" value="submit"></td>
@@ -33,6 +46,8 @@
             </table>
     
         </fieldset>
+
+
     </form>
 </body>
 </html>
