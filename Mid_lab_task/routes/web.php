@@ -27,8 +27,11 @@ route::get('/home', 'HomeController@index');
 
 
 
-
 // route::get('/home/vendors', 'HomeController@manage_vendors');
 // route::get('/home/others_company_stuffs', 'HomeController@others_company_stuffs');
+
+
+route::get('/registration', 'RegistrationController@index');
+route::post('/registration', 'RegistrationController@store_user');
 
 route::get('/logout', 'LogoutController@index');

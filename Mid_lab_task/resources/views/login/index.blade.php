@@ -43,7 +43,12 @@
                     <td><input type="submit" name="submit" value="submit"></td>
                     <td></td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align:right; text-decoration:none;"><a href="/registration">Sign Up</a></td>
+                </tr>
             </table>
+            
     
         </fieldset>
         
@@ -51,10 +56,3 @@
     {{session('msg')}}
 </body>
 </html>
-
-<?
-$type=$_POST['type'];
-echo $type;
-
-// if($type == 'Manager')
-?>
