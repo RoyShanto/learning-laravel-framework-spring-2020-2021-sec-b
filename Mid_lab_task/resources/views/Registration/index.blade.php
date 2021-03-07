@@ -58,8 +58,8 @@
                 <tr>
                     <td>Confirm Password:</td>
                     <td>
-                        <input type="password" name="cpassword"><br>
-                        <span style="color: red;">@error('cpassword'){{$message}}@enderror</span>
+                        <input type="password" name="confirm_password"><br>
+                        <span style="color: red;">@error('confirm_password'){{$message}}@enderror</span>
                     </td>
                 </tr>
                 <tr>
@@ -107,6 +107,6 @@
         </fieldset>
         
     </form>
-    <!-- {{session('msg')}} -->
+    {{session('msg')}}
 </body>
 </html>

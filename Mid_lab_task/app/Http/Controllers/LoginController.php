@@ -15,7 +15,7 @@ class loginController extends Controller
     function verify(Request $req){
         $rules = [
             'email' => 'required|email|max:49',
-            'password' => 'required|min:8|max:20|regex:/^[\w-]*$/' ];
+            'password' => 'required|min:8|max:20|alpha_num'];
             
             $this->validate($req, $rules);
 
@@ -30,7 +30,6 @@ class loginController extends Controller
                         $username = $us->username;
                         $user_type = $us->type;
                     }
-                    // print_r($user->email);
                 
                     // print_r(count($user));
 
