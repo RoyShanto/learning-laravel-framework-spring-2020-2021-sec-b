@@ -34,4 +34,11 @@ route::get('/home', 'HomeController@index');
 route::get('/registration', 'RegistrationController@index');
 route::post('/registration', 'RegistrationController@store_user');
 
+
+route::get('/system/sales', 'ChannelController@index');
+route::get('/system/sales/physical_store', 'ChannelController@physical_store');
+route::get('/system/sales/social_media', 'ChannelController@social_media');
+route::get('/system/sales/ecommerce', 'ChannelController@ecommerce');
+
+
 route::get('/logout', 'LogoutController@index');

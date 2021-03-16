@@ -16,7 +16,7 @@ class loginController extends Controller
         $rules = [
             'email' => 'required|email|max:49',
             'password' => 'required|min:8|max:20|alpha_num'];
-            
+
             $this->validate($req, $rules);
 
         $user = Login::where('email', $req->email)
@@ -30,15 +30,15 @@ class loginController extends Controller
                         $username = $us->username;
                         $user_type = $us->type;
                     }
-                
+
                     // print_r(count($user));
 
         if(count($user) > 0){
-            
+
             // if($user_type == 'admin')
 
-            $req->session()->put('username', $username);  
-            $req->session()->put('user_type', $user_type);  
+            $req->session()->put('username', $username);
+            $req->session()->put('user_type', $user_type);
 
                 // echo $req->session()->get('username');
                 // echo $req->session()->get('user_type');
@@ -50,11 +50,9 @@ class loginController extends Controller
             $req->session()->flash('msg', 'invalide user..!');
             return redirect('\login');
         }
-        
-                 
+
+
     }
-     
-    
 
 
 
@@ -62,7 +60,9 @@ class loginController extends Controller
 
 
 
-    
+
+
+
     //     if($req->email == '' || $req->password == ''){
     //         echo "Null Submition";
 
@@ -71,21 +71,21 @@ class loginController extends Controller
     //     }
     //     elseif($req->email == $req->password){
 
-            
+
     //         // echo $req->username;
     //         // echo $req->password;
-    //         // $req->session()->put('username', $req->username); 
+    //         // $req->session()->put('username', $req->username);
 
-            
+
     //         $rules = [
     //             'email' => 'required|email',
     //             'password' => 'required|min:5'
     //         ];
     //         $this->validate($req, $rules);
-            
+
     //         return redirect('/home');
 
-            
+
 
     //         // $type = user_type::all();
     //         // print_r($type);
@@ -96,9 +96,9 @@ class loginController extends Controller
     //         // $req->session()->flash('msg', 'Invalid username and password...');
     //         // return redirect('/login');
     //     }
-        
+
 
     // }
 
-    
+
 }

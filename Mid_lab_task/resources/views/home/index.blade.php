@@ -13,6 +13,7 @@
     <a href="/home/vendors">Vendors</a>&nbsp;&nbsp;&nbsp;
     <a href="/home/others_company_stuffs">Others Company Stuffs</a>&nbsp;&nbsp;&nbsp;
     <a href="/home/static_contents">Static Contents</a>&nbsp;&nbsp;&nbsp;
+    <a href="/system/sales">Sales Chanel</a>&nbsp;&nbsp;&nbsp;
     <a href="/logout">Logout</a>
 </body>
 </html>
