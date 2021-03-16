@@ -17,11 +17,11 @@
         @endforeach
     @endif -->
     <form method="post">
-    
+
         <!-- @csrf -->
         <!-- {{ csrf_field() }} -->
         <!-- <input type="hidden" name="_token" value=" {{ csrf_token() }}"> -->
-        
+
         <fieldset>
             <legend>New Registration</legend>
             <table>
@@ -32,7 +32,7 @@
                     <input type="text" name="name"><br>
                     <span style="color: red;">@error('name'){{$message}}@enderror</span>
                 </td>
-            </tr> 
+            </tr>
             <tr>
                 <td>Username:</td>
                 <td>
@@ -103,9 +103,9 @@
                     <td></td>
                 </tr>
             </table>
-    
+
         </fieldset>
-        
+
     </form>
     {{session('msg')}}
 </body>

@@ -32,7 +32,7 @@ class RegistrationController extends Controller
         // $user = Customer::where('email', $req->email)
         //     ->where('user_name', $req->username)
         //     ->get();
-                        //    or   
+                        //    or
         $user = DB::table('customers')
             ->where('email', $req->email)
             ->where('user_name', $req->username)

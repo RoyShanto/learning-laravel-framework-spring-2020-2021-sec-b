@@ -14,6 +14,7 @@
     <a href="/logout">Logout</a>
 
     <h1>Physical Store</h1>
+    <a href="/system/sales/physical_store/sales_log"> View Sales Log</a>&nbsp;&nbsp;&nbsp; <br><br>
 
     <table border="1">
         <tr>

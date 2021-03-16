@@ -40,5 +40,8 @@ route::get('/system/sales/physical_store', 'ChannelController@physical_store');
 route::get('/system/sales/social_media', 'ChannelController@social_media');
 route::get('/system/sales/ecommerce', 'ChannelController@ecommerce');
 
+route::get('/system/sales/physical_store/sales_log', 'ChannelController@sales_log');
+route::post('/system/sales/physical_store/sales_log', 'ChannelController@store_sales_log');
+
 
 route::get('/logout', 'LogoutController@index');

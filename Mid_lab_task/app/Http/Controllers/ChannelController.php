@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Channel;
+use App\Sales;
 use Illuminate\Support\Facades\DB;
 
 class ChannelController extends Controller
@@ -97,4 +98,41 @@ class ChannelController extends Controller
 
         // return view('channel.ecommerce');
     }
-}
+    public function sales_log(){
+        return view('channel.sales_log');
+    }
+    public function store_sales_log(Request $req){
+        $rules = [
+            'customer_name' => 'required|min:3|max:30|alpha',
+            'address' =>'required|min:3|max:50|alpha',
+            'phone' => 'required|min:11|max:15',
+            'product_id' => 'required',
+            'product_name' =>'required',
+            'unit_price' => 'required|min:1',
+            'quantity' => 'required|min:1|max:20',
+            'total_price' => 'required|min:1',
+            'date_sold' => 'required',
+            'payment_type' => 'required',
+            'status' => 'required'
+        ];
+        $this->validate($req, $rules);
+
+            $user = new Sales();          //Customer is a model name
+            $user->customer_name = $req->customer_name;
+            $user->address = $req->address;
+            $user->phone = $req->phone;
+            $user->product_id = $req->product_id;
+            $user->product_name = $req->product_name;
+            $user->unit_price = $req->unit_price;
+            $user->quantity = $req->quantity;
+            $user->total_price = $req->total_price;
+            $user->date_sold = $req->date_sold;
+            $user->payment_type = $req->payment_type;
+            $user->status = $req->status;
+            $user->save();
+            return redirect('/system/sales/physical_store');
+
+            }
+        }
+    }
+// }
